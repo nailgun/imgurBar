@@ -48,9 +48,7 @@
         [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
         [pasteBoard setString:imgurUrlString forType:NSStringPboardType];
 
-        BOOL finished = [[NSWorkspace sharedWorkspace] openURL:imgurUrl];
-        
-        if(finished){
+        if (imgurUrl){
             NSString *alertText = [NSString stringWithFormat:@"%@/%@/", imgurUrlString, @" copied to clipboard."];
             [[NSApp delegate] flashAlert:alertText];
         }
